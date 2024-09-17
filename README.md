@@ -29,5 +29,5 @@ Note that this is for the predetermined transfer function below. This is impleme
 $$ H(s) = \frac{1}{(R \times C)^{2} \times s^{2} + \frac{(3 - A_m)}{(R \times C)} \times s + \frac{1}{(R \times C)^{2}}} $$
 
 <div align="center">
-    <img src="Figures/Butterworth_Filter_Root_Locus_Am_1.586.png" width=400 height=400 title="Ex : Butterworth Filter Root Locus Critically Damped">
+    <img src="Figures/Butterworth_Filter_Root_Locus_Am_1.586.png" width=450 height=300 title="Ex : Butterworth Filter Root Locus Critically Damped">
 </div>
