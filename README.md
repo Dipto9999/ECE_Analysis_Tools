@@ -8,9 +8,9 @@
 
 ## Overview
 
-I wrote these **Python** scripts to make my life easier in completing my projects as part of the <b>The University of British Columbia Electrical and Computer Engineering</b> undergraduate program.
+I wrote these **Python** scripts as a complementary tool in courses I took as part of <b>The University of British Columbia Electrical and Computer Engineering</b> undergraduate program.
 
-Please feel free to contribute to this repo and use these tools as part of your degree.
+This made my life easier in sharing data and producing reports. Please feel free to contribute to this repo and use these tools as part of your degree.
 
 ### Phasor
 
