@@ -1,15 +1,15 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def plot_phasor(poles, real_lim, imag_lim):
+def plot_poles(poles, real_lim, imag_lim):
     fig = plt.figure(figsize=(18, 15))  # Size for better visibility
     ax = fig.add_subplot(111)
-    ax.set_title('Butterworth Filter: Phasor', fontsize=20)  # Title font size
+    ax.set_title('Butterworth Filter: Poles', fontsize=20)  # Title font size
 
     # Calculate radius and phasor angle for both poles
     radius = int(np.ceil(np.sqrt(poles[0][0]**2 + poles[0][1]**2)))
 
-    filename = f'Butterworth_Filter_Phasor_Radius_{radius}_Poles_'''
+    filename = f'Butterworth_Filter_Plot_Radius_{radius}_Poles_'''
     for pole in poles:
         current_real, current_imag = pole
         complex_representation = f"{current_real} + {current_imag}j"
@@ -59,13 +59,13 @@ def plot_phasor(poles, real_lim, imag_lim):
 # Set the limits for the plot; adjust these values as necessary.
 
 # Original poles
-plot_phasor(
+plot_poles(
     poles = [(-7071, 7071), (-7071, -7071)],
     real_lim = -8000, imag_lim = 8000
 )
 
 # Oscillatory poles
-plot_phasor(
+plot_poles(
     poles = [(0, 10E3), (0, -10E3)],
     real_lim = -8000, imag_lim = 8000
 )

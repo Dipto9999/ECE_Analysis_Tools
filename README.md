@@ -3,7 +3,7 @@
 ## Contents
 
 * [Overview](#Overview)
-    * [Phasor](#Phasor)
+    * [Poles](#Poles)
     * [Root Locus](#Root-Locus)
 
 ## Overview
@@ -12,12 +12,12 @@ I wrote these **Python** scripts as a complementary tool in courses I took as pa
 
 These made my life easier in sharing data and producing reports. Please feel free to contribute to this repo and use these tools as part of your degree.
 
-### Phasor
+### Poles
 
-The [`phasor.py`](Scripts/phasor.py) script can be used to generate a phasor plot with `matplotlib`. The `plot_phasor(poles, real_lim, imag_lim)` function can be modified with the chart limits.
+The [`poles.py`](Scripts/poles.py) script can be used to generate a phasor plot of a filter with `matplotlib`. The `plot_poles(poles, real_lim, imag_lim)` function can be modified with the chart limits.
 
 <div align="center">
-    <img src="Figures/Butterworth_Filter_Phasor_Radius_10000_Poles_10000_∠_-45.0°__10000_∠_45.0°.png" width=400 height=300 title="Ex : Butterworth Filter Phasor Plot">
+    <img src="Figures/Butterworth_Filter_Plot_Radius_10000_Poles_10000_∠_-45.0°__10000_∠_45.0°.png" width=400 height=300 title="Ex : Butterworth Filter Poles Plot">
 </div>
 
 ### Root Locus
@@ -30,4 +30,12 @@ $$ H(s) = \frac{1}{(R \times C)^{2} \times s^{2} + \frac{(3 - A_m)}{(R \times C)
 
 <div align="center">
     <img src="Figures/Butterworth_Filter_Root_Locus_Am_1.586.png" width=450 height=300 title="Ex : Butterworth Filter Root Locus Critically Damped">
+</div>
+
+### Phasors
+
+I have just added a [`phasors.py`](Scripts/phasors.py) script, but this needs to be refined.
+
+<div align="center">
+    <img src="Figures/Series_RLC_Circuit_(Phasor_Diagram)_15.04_∠_0°__26.88_∠_-87.7°__34.68_∠_-61.2°.png" width=450 height=300 title="Ex : Series RLC Circuit (Phasor Diagram)">
 </div>
