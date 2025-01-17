@@ -4,7 +4,7 @@ import numpy as np
 def plot_phasor(poles, real_lim, imag_lim):
     fig = plt.figure(figsize=(18, 15))  # Size for better visibility
     ax = fig.add_subplot(111)
-    ax.set_title('Butterworth Filter: Root Locus', fontsize=20)  # Title font size
+    ax.set_title('Butterworth Filter: Phasor', fontsize=20)  # Title font size
 
     # Calculate radius and phasor angle for both poles
     radius = int(np.ceil(np.sqrt(poles[0][0]**2 + poles[0][1]**2)))
