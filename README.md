@@ -37,5 +37,5 @@ $$ H(s) = \frac{1}{(R \times C)^{2} \times s^{2} + \frac{(3 - A_m)}{(R \times C)
 I have just added a [`phasors.py`](Scripts/phasors.py) script for helping with three-phase system calculations and visualizing current-voltage relationships.
 
 <div align="center">
-    <img src="Figures/Series_RLC_Circuit_(Phasor_Diagram).png" width=450 height=450 title="Ex : Series RLC Circuit (Phasor Diagram)">
+    <img src="Figures/Three-Phase_RL_Balanced_Load_(Voltage_Phasor_Diagram)_10.0_∠_-3.4°__10.15_∠_-63.2°__10.09_∠_57.3°.png" width=450 height=450 title="Ex : Series RLC Circuit (Phasor Diagram)">
 </div>
