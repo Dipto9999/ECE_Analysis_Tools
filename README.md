@@ -17,7 +17,7 @@ These made my life easier in sharing data and producing reports. Please feel fre
 The [`poles.py`](Scripts/poles.py) script can be used to generate a phasor plot of a filter with `matplotlib`. The `plot_poles(poles, real_lim, imag_lim)` function can be modified with the chart limits.
 
 <div align="center">
-    <img src="Figures/Butterworth_Filter_Plot_Radius_10000_Poles_10000_∠_-45.0°__10000_∠_45.0°.png" width=400 height=300 title="Ex : Butterworth Filter Poles Plot">
+    <img src="Figures/Three-Phase_RL_Balanced_Load_(Voltage_Phasor_Diagram)_10.0_∠_-3.4°__10.15_∠_-63.2°__10.09_∠_57.3°.png" width=400 height=300 title="Ex : Butterworth Filter Poles Plot">
 </div>
 
 ### Root Locus
@@ -34,7 +34,7 @@ $$ H(s) = \frac{1}{(R \times C)^{2} \times s^{2} + \frac{(3 - A_m)}{(R \times C)
 
 ### Phasors
 
-I have just added a [`phasors.py`](Scripts/phasors.py) script, but this needs to be refined.
+I have just added a [`phasors.py`](Scripts/phasors.py) script for helping with three-phase system calculations and visualizing current-voltage relationships.
 
 <div align="center">
     <img src="Figures/Series_RLC_Circuit_(Phasor_Diagram).png" width=450 height=450 title="Ex : Series RLC Circuit (Phasor Diagram)">

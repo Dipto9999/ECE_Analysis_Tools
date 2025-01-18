@@ -40,13 +40,21 @@ def plot_phasors(phasors: list[dict], title: str):
     max_real = max(abs(phasor['real']) for phasor in phasors)
     max_imag = max(abs(phasor['imag']) for phasor in phasors)
 
-    ax.set_xlim(-1.2 * max_real, 1.2 * max_real)
-    ax.set_ylim(-1.2 * max_imag, 1.2 * max_imag)
+    if abs(max_real) < 1:
+        ax.set_xlim(-1, 1)
+        ax.set_xticks(np.linspace(round(-1), round(1), 11))
+    else:
+        ax.set_xlim(-1.2 * max_real, 1.2 * max_real)
+        ax.set_xticks(np.linspace(round(-1.2 * max_real), round(1.2 * max_real), 11))
 
-    ax.set_xticks(np.linspace(round(-1.2 * max_real), round(1.2 * max_real), 11))
-    ax.set_yticks(np.linspace(round(-1.2 * max_imag), round(1.2 * max_imag), 11))
+    if abs(max_imag) < 1:
+        ax.set_ylim(-1, 1)
+        ax.set_yticks(np.linspace(round(-1), round(1), 11))
+    else:
+        ax.set_ylim(-1.2 * max_imag, 1.2 * max_imag)
+        ax.set_yticks(np.linspace(round(-1.2 * max_imag), round(1.2 * max_imag), 11))
 
-    ax.tick_params(axis='both', which='major', labelsize=15)
+    ax.tick_params(axis='both', which='minor', labelsize=15)
 
     ax.legend(
         loc = 'lower center', bbox_to_anchor = (0.5, 1.15),  # Position Above Plot with Padding
@@ -58,15 +66,47 @@ def plot_phasors(phasors: list[dict], title: str):
     fig.subplots_adjust(bottom = 0.7)
 
     fig.tight_layout(rect = [0, 0, 1, 0.9]) # Make Space for Title
-    fig.savefig(f'Figures/{filename.replace(":","_").rstrip("__")}.png')
+    fig.savefig(f'Figures/{filename.replace("\n","").replace(":","_").rstrip("__")}.png')
     plt.show()
 
 plot_phasors(
     phasors=[
-        {'name': 'V1', 'real': 15.04 * np.cos(-0.7*np.pi/180.0), 'imag': 15.04 * np.sin(-0.7*np.pi/180.0), 'color': 'black'},
-        {'name': 'I1', 'real': 1.60 * np.cos(27.7*np.pi/180.0), 'imag': 1.60 * np.sin(27.7*np.pi/180.0), 'color': 'blue'},
-        {'name': 'V2', 'real': 26.88 * np.cos(-245.7*np.pi/180.0), 'imag': 26.88 * np.sin(-245.7*np.pi/180.0), 'color': 'green'},
-        {'name': 'V3', 'real': 34.68* np.cos(-61.2*np.pi/180.0), 'imag': 34.68* np.sin(-61.2*np.pi/180.0), 'color': 'orange'},
+        {
+            'name': 'V1', 'color': 'blue',
+            'real': 10 * np.cos(-3.4*np.pi/180.0),
+            'imag': 10 * np.sin(-3.4*np.pi/180.0),
+        },
+        {
+            'name': 'V2', 'color': 'green',
+            'real': 10.15 * np.cos(-243.2*np.pi/180.0),
+            'imag': 10.15 * np.sin(-243.2*np.pi/180.0)
+        },
+        {
+            'name': 'V3', 'color': 'orange',
+            'real': 10.09 * np.cos(-122.7*np.pi/180.0),
+            'imag': 10.09 * np.sin(-122.7*np.pi/180.0)
+        },
     ],
-    title='Series RLC Circuit (Phasor Diagram)'
+    title='Three-Phase RL Balanced Load (Voltage Phasor Diagram)'
+)
+
+plot_phasors(
+    phasors=[
+        {
+            'name': 'I1', 'color': 'blue',
+            'real': 0.3 * np.cos(-50.8*np.pi/180.0),
+            'imag': 0.3 * np.sin(-50.8*np.pi/180.0),
+        },
+        {
+            'name': 'I2', 'color': 'green',
+            'real': 0.26 * np.cos(63*np.pi/180.0),
+            'imag': 0.26 * np.sin(63*np.pi/180.0)
+        },
+        {
+            'name': 'I3', 'color': 'orange',
+            'real': 0.27* np.cos(-174.9*np.pi/180.0),
+            'imag': 0.27* np.sin(-174.9*np.pi/180.0)
+        },
+    ],
+    title='Three-Phase RL Balanced Load (Current Phasor Diagram)'
 )
