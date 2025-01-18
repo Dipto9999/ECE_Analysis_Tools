@@ -37,5 +37,5 @@ $$ H(s) = \frac{1}{(R \times C)^{2} \times s^{2} + \frac{(3 - A_m)}{(R \times C)
 I have just added a [`phasors.py`](Scripts/phasors.py) script, but this needs to be refined.
 
 <div align="center">
-    <img src="Figures/Series_RLC_Circuit_(Phasor_Diagram)_15.04_∠_0°__26.88_∠_-87.7°__34.68_∠_-61.2°.png" width=450 height=300 title="Ex : Series RLC Circuit (Phasor Diagram)">
+    <img src="Figures/Series_RLC_Circuit_(Phasor_Diagram).png" width=450 height=450 title="Ex : Series RLC Circuit (Phasor Diagram)">
 </div>
