@@ -1,0 +1,11 @@
+// Parallel Resistances
+EXPORT RR(R1, R2) BEGIN
+    RETURN(R1*R2/(R1+R2));
+END;
+
+EXPORT DeltaWye(Rx, Ry, Rz) BEGIN
+	LOCAL R_1, R_2, R_3, R_sum;
+	R_sum := Rx+Ry+Rz;
+	R_1 := (Rx*Ry)/R_sum; R_2 := (Rx*Ry)/R_sum; R_3 := (Rx*Rz)/R_sum;
+    RETURN({R_1, R_2, R_3});
+END;

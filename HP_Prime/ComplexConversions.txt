@@ -1,0 +1,38 @@
+// Polar to Rectangular
+// Input: abs, arg(deg)
+// Output: complex number
+EXPORT P2R(polar_abs, polar_arg) BEGIN
+	LOCAL a, b, mode;
+
+	mode := HAngle; // Save State
+	HAngle := 1; // Use Degrees
+	a := polar_abs * COS(polar_arg);
+	b := polar_abs * SIN(polar_arg);
+    HAngle := mode; // Restore State
+
+    RETURN(a + i*b);
+END;
+
+// Polar to Rectangular
+// Input: complex number
+// Output: abs, arg(deg)
+EXPORT R2P(c) BEGIN
+	LOCAL polar_abs, polar_arg, mode;
+
+	mode := HAngle; // Save State
+	HAngle := 1; // Use Degrees
+	polar_abs := abs(c); polar_arg := arg(c);
+   	HAngle := mode; // Restore State
+
+	RETURN({polar_abs, polar_arg});
+END;
+
+// Convert Angle Units //
+
+EXPORT toDeg(rad) BEGIN
+	RETURN(rad*180/pi);
+END;
+
+EXPORT toRad(deg) BEGIN
+	RETURN(deg*pi/180);
+END;

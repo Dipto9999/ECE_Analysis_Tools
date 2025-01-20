@@ -1,0 +1,71 @@
+EXPORT SSSx(S_1, S_2, S_3) BEGIN
+	LOCAL A_1, A_2, A_3;
+
+	HAngle := 1; // Use Degrees
+
+    // S_1^2 = S_2^2 + S_3^2 - 2*S_2*S_3*COS(A_1) where A_1 opposite S_1
+    A_1 := ACOS((S_1^2 - S_2^2 - S_3^2)/(-2*S_2*S_3));
+
+    // S_2^2 = S_1^2 + S_3^2 - 2*S_1*S_3*COS(A_2) where A_2 opposite S_2
+    A_2 := ACOS((S_2^2 - S_1^2 - S_3^2)/(-2*S_1*S_3));
+
+    // S_3^2 = S_1^2 + S_2^2 - 2*S_1*S_2*COS(A_3) where A_3 opposite S_3
+    A_3 := ACOS((S_3^2 - S_1^2 - S_2^2)/(-2*S_1*S_2));
+
+    // Sides and Angles Returned in Ascending Order
+    RETURN({S_1, A_3, S_2, A_1, S_3, A_2});
+END;
+
+EXPORT SSAx(S_1, S_2, A_3) BEGIN
+	LOCAL S_3, x, y, outList := {};
+
+	HAngle := 1; // Use Degrees
+
+    x := S_2 * COS(A_3); // Horizontal Projection of S_2
+    y := SQRT(S_1^2 - (S_2 * SIN(A_3))^2); // Horizontal Gap of Right Triangle Formed by Vertical Projection
+
+    // Ambiguous (i.e. 0-2 Valid Triangles)
+    IF S_1 >= S_2 * SIN(A_3) THEN // S_1 Reaches Vertical Projection
+        S_3 = x + y;
+        outList := SSSx(S_1, S_2, S_3); // At Least 1 Valid Triangle
+
+        IF x > y THEN // Horizontal Projection > Side Calculated by Pythagorean Theorem
+            S_3 := x - y;
+            outList := {outList, SSSx(S_1, S_2, S_3)}; // Append 2nd Valid Triangle to List
+        END;
+    END;
+
+    RETURN(outList);
+END;
+
+EXPORT SASx(S_1, A_3, S_2) BEGIN
+    LOCAL S_3;
+	HAngle := 1; // Use Degrees
+
+    S_3 = SQRT(S_1^2 + S_2^2 - 2*S_1*S_2*COS(A_3));
+
+    RETURN(SSSx(S_1, S_2, S_3));
+END;
+
+EXPORT SAAx(S_1, A_2, A_1) BEGIN
+    LOCAL S_2, S_3, A_3;
+	HAngle := 1; // Use Degrees
+
+    A_3 := 180-A_1-A_2;
+
+    // Law of Sines (i.e. S_1/SIN(A_1) = S_2/SIN(A_2) = S_3/SIN(A_3))
+    S_2 = SIN(A_2) * S_1/SIN(A_1);
+    S_2 = SIN(A_3) * S_1/SIN(A_1);
+
+    RETURN(SSSx(S_1, S_2, S_3));
+END;
+
+EXPORT ASAx(A_3, S_1, A_2) BEGIN
+    LOCAL S_2, A_1;
+	HAngle := 1; // Use Degrees
+
+    A_1 := 180-A_2-A_3;
+    S_2 = SIN(A_2) * S_1/SIN(A_1); // Law of Sines (i.e. S_1/SIN(A_1) = S_2/SIN(A_2) = S_3/SIN(A_3));
+
+    RETURN(SASx(S_1, A_3, S_2));
+END;

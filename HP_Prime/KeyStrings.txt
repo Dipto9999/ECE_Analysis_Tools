@@ -1,0 +1,72 @@
+KEY K_On() BEGIN
+    RETURN "kcl:= = ";
+END;
+
+KEY K_Dot() BEGIN
+    RETURN "SOLVE({kcl1, kcl2}, {v1,v2})";
+END;
+
+KEY K_1() BEGIN
+    RETURN "PARTFRAC()";
+END;
+
+KEY K_2() BEGIN
+    RETURN "NORMAL()";
+END;
+
+KEY K_3() BEGIN
+    RETURN "EVALF()";
+END;
+
+KEY K_4() BEGIN
+    RETURN "SIMPLIFY()";
+END;
+
+KEY K_5() BEGIN
+    RETURN "PROOT(NUMER())";
+END;
+
+KEY K_6() BEGIN
+    RETURN "PROOT(DENOM())";
+END;
+
+KEY K_7() BEGIN
+    RETURN "ILAPLACE(, s, t)";
+END;
+
+KEY K_8() BEGIN
+    RETURN "LAPLACE( , t, s)";
+END;
+
+KEY K_9() BEGIN
+    RETURN "HEAVISIDE()";
+END;
+
+// ToDo: Implement
+KEY K_Sin() BEGIN
+    RETURN "";
+END;
+
+KEY K_Cos() BEGIN
+    RETURN "ARG()";
+END;
+
+KEY K_Tan() BEGIN
+    RETURN "RE()";
+END;
+
+KEY K_Ln() BEGIN
+    RETURN "IM()";
+END;
+
+KEY K_Log() BEGIN
+    RETURN "CONJ()";
+END;
+
+KEY K_Left() BEGIN
+    RETURN "toDeg()";
+END;
+
+KEY K_Right() BEGIN
+    RETURN "toRad()";
+END;

@@ -1,16 +1,24 @@
-# Plot Tools : Electrical and Computer Engineering
+# Analysis Tools : Electrical and Computer Engineering
 
 ## Contents
 
 * [Overview](#Overview)
+    * [HP Prime](#HP-Prime)
     * [Poles](#Poles)
     * [Root Locus](#Root-Locus)
+    * [Phasors](#Phasors)
 
 ## Overview
 
-I wrote these **Python** scripts as a complementary tool in courses I took as part of <b>The University of British Columbia Electrical and Computer Engineering</b> undergraduate program.
+I wrote these **Python** scripts and **HP PPL** programs as complementary tools in courses I took as part of <b>The University of British Columbia Electrical and Computer Engineering</b> undergraduate program.
 
-These made my life easier in sharing data and producing reports. Please feel free to contribute to this repo and use these tools as part of your degree.
+These made my life easier in analyzing data and producing reports. Please feel free to contribute to this repo and use these tools as part of your degree.
+
+### HP Prime
+
+These **Computer Algebra Systems (CAS)** programs are used in the <a href ="https://en.wikipedia.org/wiki/HP_Prime">**HP-Prime Graphing Calculator**</a> to make it easier to perform circuit analysis with <a href = "https://en.wikipedia.org/wiki/Modified_nodal_analysis">**Modified Nodal Analysis (MNA)**</a>.
+
+You can import the code in [`HP_Prime`](HP_Prime) to your virtual / physical device with the <a href = "https://www.hpcalc.org/details/8938">**HP Connectivity Kit**</a>
 
 ### Poles
 
