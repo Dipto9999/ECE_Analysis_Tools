@@ -3,43 +3,43 @@ KEY K_On() BEGIN
 END;
 
 KEY K_Dot() BEGIN
-    RETURN "SOLVE({kcl1, kcl2}, {v1,v2})";
+    RETURN "solve({kcl1, kcl2}, {v1,v2})";
 END;
 
 KEY K_1() BEGIN
-    RETURN "PARTFRAC()";
+    RETURN "partfrac()";
 END;
 
 KEY K_2() BEGIN
-    RETURN "NORMAL()";
+    RETURN "normal()";
 END;
 
 KEY K_3() BEGIN
-    RETURN "EVALF()";
+    RETURN "evalf()";
 END;
 
 KEY K_4() BEGIN
-    RETURN "SIMPLIFY()";
+    RETURN "simplify()";
 END;
 
 KEY K_5() BEGIN
-    RETURN "PROOT(NUMER())";
+    RETURN "proot(numer())";
 END;
 
 KEY K_6() BEGIN
-    RETURN "PROOT(DENOM())";
+    RETURN "proot(denom())";
 END;
 
 KEY K_7() BEGIN
-    RETURN "ILAPLACE(, s, t)";
+    RETURN "ilaplace(, s, t)";
 END;
 
 KEY K_8() BEGIN
-    RETURN "LAPLACE( , t, s)";
+    RETURN "laplace( , t, s)";
 END;
 
 KEY K_9() BEGIN
-    RETURN "HEAVISIDE()";
+    RETURN "heaviside()";
 END;
 
 // ToDo: Implement
